@@ -17,7 +17,6 @@ def get_selected_row(event):
     except IndexError:
         pass
 
-
 def view_command():
     list1.delete(0, END)
     for row in backend.view():
@@ -39,11 +38,8 @@ def delete_command():
 def update_command():
     backend.update(selected_tuple[0], title_text.get(), author_text.get(), year_text.get(), isbn_text.get())
 
-
-
 #creating window for the app
 window = Tk()
-
 window.wm_title("BookStore")
 
 # addindg widgets
@@ -85,7 +81,6 @@ sb1 = Scrollbar(window)
 sb1.grid(row = 2, column = 2, rowspan = 6)
 
 #applying configure map to scrollbar
-
 list1.configure(yscrollcommand = sb1.set)
 sb1.configure(command = list1.yview)
 
@@ -108,18 +103,5 @@ b5.grid(row = 6, column = 3)
 
 b6 = Button(window, text = "Close", width = 12, command = window.destroy)
 b6.grid(row = 7, column = 3)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 window.mainloop()
